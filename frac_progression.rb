@@ -93,11 +93,11 @@ live_loop :player do
   i = tick
   use_synth :pulse
   with_fx :rlpf, cutoff: pat.ring[i] + 10 - rand_i(21), res: 0.96 do
-    ##| play pat.ring[i], attack: 0.03, decay: 0.25, sustain_level: 0, amp: (ring 0.9  )[i]
+    | play pat.ring[i], attack: 0.03, decay: 0.25, sustain_level: 0, amp: (ring 0.9  )[i]
     ##| play pat.ring[i] + 7, attack: 0.03, decay: 0.25, sustain_level: 0, amp: (ring 0.2)[i]
     ##| play pat.ring[i] + 12, attack: 0.03, decay: 0.25, sustain_level: 0, amp: (ring 0.1)[i]
     ##| play pat.ring[i] + 17, attack: 0.03, decay: 0.25, sustain_level: 0, amp: (ring 0.08)[i]
-    play pat.ring[i] + 24, attack: 0.03, decay: 0.25, sustain_level: 0, amp: (ring 0.04)[i]
+    # play pat.ring[i] + 24, attack: 0.03, decay: 0.25, sustain_level: 0, amp: (ring 0.08)[i]
     sleep 0.175
   end
 end
