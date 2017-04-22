@@ -16,6 +16,7 @@ define :normalize_ramp do |arr, min, max|
   pat
 end
 
+# This is just transposing the pattern.
 define :fractal_arp do |pattern, depth|
   output = []
   pat_length = pattern.length
