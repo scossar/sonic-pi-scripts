@@ -1,5 +1,3 @@
-@test = 'this is a test'
-
 define :fractal_arp do |pattern, depth|
   output = []
   depth.times do |i|
@@ -115,7 +113,7 @@ live_loop :pat_test do
   with_fx :rlpf, cutoff: cutoff_pat.ring[i] + 20, res: res_pat.ring[i] do
     
     ##| play pat.ring[i] - 12, pulse_width: 0.5,  attack: 0.04, decay: 1, sustain_level: 0, amp: 0.4
-    ##| play pat.ring[i], pulse_width: 0.5,  attack: 0.04, decay: 1, sustain_level: 0, amp: 0.4
+    play pat.ring[i], pulse_width: 0.5,  attack: 0.04, decay: 1, sustain_level: 0, amp: 0.4
     ##| play pat.ring[i] + 12, pulse_width: 0.5, attack: 0.04, decay: 1, sustain_level: 0, amp: 0.3
     ##| ##| play pat.ring[i] + 31, pulse_width: 0.6, attack: 0.01, decay: 0.6, sustain_level: 0, amp: 0.3
     ##| use_synth :noise

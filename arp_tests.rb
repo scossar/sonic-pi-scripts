@@ -41,7 +41,6 @@ end
 
 ##| pat = normalize_ramp pat, 50, 90
 ##| puts pat
-play 50
 
 ##| pat.each do |p|
 ##|   play p

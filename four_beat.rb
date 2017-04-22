@@ -14,22 +14,7 @@ define :four_beat do |beat_list|
       te_beat = curr_beat[:beat_time] - prev_beat[:beat_time]
     end
     te_beat
-    ##| sleep te_beat
-    ##| echo_rate = curr_beat[:beat_echo] ? curr_beat[:beat_echo] : 1
-    ##| puts echo_rate
-    ##| with_fx :echo, phase: echo_rate do
-    
-    ##| sample te_sample, amp: curr_beat[:beat_amp]
-    ##| end
-    
-    ##| te_beats.push te_beat
   end
-  
-  ##| te_beats.each do |beat|
-  
-  ##|   sleep beat
-  ##|   sample te_sample
-  ##| end
 end
 
 define :metronome do
