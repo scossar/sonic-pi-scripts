@@ -40,8 +40,8 @@ live_loop :frac do
   n = pat_one.ring[i]
   use_synth :pulse
  uncomment do
-    play n - 24, pulse_width: 0.2, attack: 0.01, decay: 0.4, sustain_level: 0, amp: 1.2
-    # play n - 12, pulse_width: 0.2, attack: 0.02, decay: 0.4, sustain_level: 0, amp: 1.2
+   play n + 24, pulse_width: 0.2, attack: 0.01, decay: 0.4, sustain_level: 0, amp: 0.8
+   # play n - 12, pulse_width: 0.2, attack: 0.02, decay: 0.4, sustain_level: 0, amp: 1.2
      uncomment do
       with_fx :rlpf, cutoff: filt_pat.ring[i], res: n === pat_one[2] ? 0.98 : 0.5 do
         play n + 19, pulse_width: 0.2, attack: 0, dcay: 0.4, sustain_level: 0, amp: 0.6
