@@ -69,15 +69,26 @@ def rand_arp(pat, r_pat, prob, max, min)
   output = []
   r_pat.each do |e|
     if prob > rand(10)
-      segment = pat.map{|x| normalize_val(x + e, max, min)}
+      segment = pat.map{|x| normalize_val(x - (e/2) + e, max, min)}
       # segment = segment + segment.reverse
     else
+      # segment = [e]
       segment = pat.map{Random.rand(min...max + 1)}
       # segment = segment + segment.reverse
     end
     output.push(segment)
   end
 
+  output
+end
+
+def reverse_rand_arp(pat,random_pat, len,initial, prob)
+  output = []
+  random_pat = random_pat.slice(0..pat.length - 1)
+  len.times do |i|
+    offset = prob > rand(10) ? random_pat[i] : 0
+    output.push(pat.map{|x| x + initial + offset})
+  end
   output
 end
 
