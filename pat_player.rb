@@ -12,12 +12,10 @@ define :pat_player do |pattern, i, args = {}|
   end
   
   if echo_elements = args[:echo]
-    
     echo_phase = echo_elements[pos]
-    
     echo_mix = echo_phase && args[:echo_mix] ? args[:echo_mix] : 1
   end
-   
+  
   with_fx :echo, phase: echo_phase, mix: echo_mix do
     case e
     
