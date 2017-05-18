@@ -15,7 +15,7 @@ define :pat_player do |pattern, i, args = {}|
     
     echo_phase = echo_elements[pos]
     
-    echo_mix = echo_phase && args[:echo_mix] ? args[:echo_mix] : 0
+    echo_mix = echo_phase && args[:echo_mix] ? args[:echo_mix] : 1
   end
   
   
@@ -79,18 +79,18 @@ define :parse_pattern do |pattern, args|
   end
 end
 
+
 ##############################################
 # Loop
 ##############################################
 
-# To have an echo on a beat, the echo_mix argument needs to be set.
 
 live_loop :drum_pat_test do
   i = tick
   pat_player 'X-x-|X-x-|X-x-|X-x-|X-x-|X-x-|X-o-|X-x-', i, {rate: 1, amp: 1.2 + rand(0.2)}
   pat_player 'P---|p---|P---|p---|P---|p---|P---|p---', i, {amp: 1.1 + rand(0.2)}
-  pat_player '---s|----|--s-|----|---s|----|----|-sS-', i, {amp: 1 + rand(0.2), rate: 1, reverse: [10], echo: {10 => [0.125, 0.25].choose}, echo_mix: 1}
-  pat_player 'b---|----|----|----|b---|----|B---|----', i, {amp: 1.4, echo: {16 => [0.5, 0.125].choose}, echo_mix: 1}
+  pat_player '---s|----|--s-|----|---s|----|----|-sS-', i, {amp: 1 + rand(0.2), rate: 1, reverse: [10], echo: {10 => [0.125, 0.25].choose}}
+  pat_player 'b---|----|----|----|b---|----|B---|----', i, {amp: 1.4, echo: {16 => [0.5, 0.125].choose}}
   pat_player '----|--c-|', i, {amp: 0.3}
   pat_player 'l--l|', i, {amp: 0.5, rate: 1}
   
