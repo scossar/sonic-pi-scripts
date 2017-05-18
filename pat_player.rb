@@ -101,10 +101,10 @@ live_loop :bass_line do
   
   bass_notes = [38, 45, 48, 50, 50, 48, 45, 38].ring
   loop_tick = 0
-  8.times do
+  (ring, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 16, 16, 16, 16, 16, 16)[i].times do
     
     play note: bass_notes[i + loop_tick], pulse_width: 0.4, attack: 0.01, decay: 0.127, sustain_level: 0, amp: 0.9
-    play note: bass_notes[i + loop_tick] + 12, pulse_width: 0.4, attack: 0.01, decay: 0.127, sustain_level: 0, amp: 0.4
+    play note: bass_notes[i + loop_tick] + 12, pulse_width: 0.4, attack: 0.01, decay: 0.127, sustain_level: 0, amp: 0.5
     
     loop_tick += 1
     sleep 0.125
