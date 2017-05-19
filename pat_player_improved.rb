@@ -45,7 +45,7 @@ define :pat_player do |pattern, i, args = {}|
     sample :drum_cowbell, amp: 1 * amp, rate: rate
     
   when 'p'
-    sample :perc_snap, amp: 0.5 * amp, rate: rate
+    sample :perc_snap, amp: 0.7 * amp, rate: rate
   when 'P'
     sample :perc_snap, amp: 1 * amp, rate: rate
     
@@ -74,10 +74,13 @@ use_bpm 134
 
 live_loop :drum_pat_test do
   i = tick
-  pat_player '----x---|---xX---|----x---|---xX---', i, {rate: 1, amp: 3 + rand(0.2), remove_pipes: 1}
-  pat_player 'B-------|b-----B-', i, {amp: 1.4, remove_pipes: 1}
-  pat_player '--s-----|--s-S--s|--s----S|--s-s--S', i, {amp: 0.9, remove_pipes: 1}
-  pat_player 'l---llLl|l---l---|l---l---|l---lcCc', i, {amp: 0.7, remove_pipes: 1}
+  ##| pat_player '----x---|---xX---|----x---|---xX---', i, {rate: 1, amp: 4 + rand(0.2), remove_pipes: 1}
+  pat_player 'P p p', i, {rate: 1, amp: 2.3 + rand(0.2), remove_pipes: 1}
+  pat_player 'B-------|B----bB-', i, {amp: 2.4, remove_pipes: 1}
+  pat_player '--s--s--|---sSs-S|S--s-S-s|--S-s--S', i, {amp: 1.4, reverse: [16], remove_pipes: 1}
+  pat_player 'l---LlLl|l---L---|l---L---|l---LcCc', i, {amp: 0.8, remove_pipes: 1}
+  pat_player 'iiii    |        |i i i  i| i i i i', i, {amp: 2, remove_pipes: 1}
+  pat_player '----X---|--------|--xxXxx-|x---X---', i, {amp: 7, remove_pipes: 1}
   sleep 0.25
 end
 
