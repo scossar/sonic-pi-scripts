@@ -1,7 +1,7 @@
 define :pat_player do |pattern, i, args = {}|
   
   if args[:remove_pipes]
-    pat = pattern.tr('|', '') if args[:remove_pipes]
+    pat = pattern.tr('|', '')
   else
     pat = pattern
   end
