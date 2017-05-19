@@ -1,5 +1,3 @@
-load '/Users/scossar/Desktop/sonic_pi/files/drum_functions.rb'
-
 define :pat_player do |pattern, i, args = {}|
   
   if args[:remove_pipes]
@@ -76,7 +74,7 @@ use_bpm 134
 
 live_loop :drum_pat_test do
   i = tick
-  pat_player 'X-x-X-x-|'                          , i, {rate: 1, amp: 2 + rand(0.2), remove_pipes: 1}
+  pat_player 'c---|'                          , i, {rate: 1, amp: 0.6 + rand(0.2), remove_pipes: 1}
   pat_player 'B-------|b-----B-'                  , i, {amp: 1.4, remove_pipes: 1}
   pat_player '--s-----|--s-S--s|--s----S|--s-s--S', i, {amp: 0.9, remove_pipes: 1}
   pat_player 'l---llLl|l---l---|l---l---|l---lcCc', i, {amp: 0.7, remove_pipes: 1}
